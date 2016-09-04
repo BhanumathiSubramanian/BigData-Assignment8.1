@@ -1,0 +1,44 @@
+
+Text File Contains
+
+Hadoop	
+is	
+open	
+source	
+frame	
+work	
+Hadoop	
+is	
+good	
+framework	
+for	
+handling	
+big	
+data
+
+--------------------------
+Pig Operations
+
+
+
+grunt> wordcount = load '/home/acadgild/PigNotes/line.txt' as (line:chararray); 
+grunt> linesex = foreach wordcount generate FLATTEN(TOKENIZE(line)) as word;
+grunt> groupex = group linesex by word;
+grunt> countwords = foreach groupex generate group, COUNT(linesex);
+grunt> dump countwords;
+
+Answer as:
+
+(is,2)
+(big,1)
+(for,1)
+(data,1)
+(good,1)
+(open,1)
+(work,1)
+(frame,1)
+(Hadoop,2)
+(source,1)
+(handling,1)
+(framework,1)
+
